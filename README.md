@@ -1,10 +1,10 @@
 # Capital Markets Agent Factory (GPT-5 Demo)
 
-> **Production-ready AI agents for institutional trading, compliance, and research workflows**
+> **Preview AI agents for institutional trading, compliance, and research workflows**
 
 ## 🎯 Live Demo Script
 
-For conference presentations, follow this sequence:
+For live demos, follow this sequence:
 1. **Start in Mock mode** to ensure smooth flow
 2. **Toggle to Live** for one impressive GPT-5 example  
 3. **Always have backup JSON files** ready
@@ -165,6 +165,9 @@ If anything breaks during live presentation:
    - `OPENAI_API_KEY` (Production/Preview/Development)
    - `GPT_MODEL=gpt-5`
 3. Deploy automatically on push to main
+
+Alternatively use other vibe coding tools to aid in customizations and deployment:
+<img width="1339" height="748" alt="Screenshot 2025-08-17 at 3 12 24 PM" src="https://github.com/user-attachments/assets/205de6b9-7900-425d-9cba-a76ac2f59287" />
 
 ## 📄 License
 
