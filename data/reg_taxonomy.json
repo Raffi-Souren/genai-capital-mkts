@@ -1,0 +1,27 @@
+{
+  "regulations": {
+    "MiFID II": {
+      "desks": ["Equities", "Fixed Income", "Derivatives"],
+      "impact_areas": ["Best Execution", "Transaction Reporting", "Research Unbundling"]
+    },
+    "Basel III": {
+      "desks": ["Credit", "Market Risk", "Liquidity Management"],
+      "impact_areas": ["Capital Requirements", "Leverage Ratio", "Liquidity Coverage"]
+    },
+    "Dodd-Frank": {
+      "desks": ["Derivatives", "Proprietary Trading", "Risk Management"],
+      "impact_areas": ["Volcker Rule", "Swap Execution", "Central Clearing"]
+    },
+    "GDPR": {
+      "desks": ["All Desks"],
+      "impact_areas": ["Data Privacy", "Client Communications", "Record Keeping"]
+    }
+  },
+  "desk_mapping": {
+    "Equities": ["equity trading", "stock", "shares", "market making"],
+    "Fixed Income": ["bonds", "credit", "rates", "treasury"],
+    "Derivatives": ["options", "futures", "swaps", "structured products"],
+    "Prime Brokerage": ["securities lending", "margin", "custody"],
+    "Macro": ["fx", "commodities", "rates", "macro trading"]
+  }
+}

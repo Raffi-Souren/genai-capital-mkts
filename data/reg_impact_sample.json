@@ -1,0 +1,33 @@
+{
+  "regulation": {
+    "name": "Enhanced Capital Requirements Rule",
+    "effective_date": "2024-07-01",
+    "summary": "New capital adequacy requirements for systemically important financial institutions",
+    "key_provisions": [
+      "Increased Tier 1 capital ratio to 12%",
+      "Enhanced stress testing requirements",
+      "Quarterly reporting obligations",
+      "Risk-weighted asset calculation changes"
+    ]
+  },
+  "impact_analysis": {
+    "affected_desks": ["Credit", "Market Risk", "Treasury"],
+    "implementation_timeline": "6 months",
+    "estimated_cost": "$2.5M",
+    "regulatory_burden": "High"
+  },
+  "action_items": [
+    {
+      "task": "Update capital calculation models",
+      "owner": "Risk Management",
+      "due_date": "2024-04-01",
+      "status": "In Progress"
+    },
+    {
+      "task": "Implement new reporting systems",
+      "owner": "Technology",
+      "due_date": "2024-05-15",
+      "status": "Not Started"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "trades": [
+    {
+      "trade_id": "TRD_001",
+      "account_id": "ACC_001",
+      "symbol": "AAPL",
+      "side": "BUY",
+      "quantity": 10000,
+      "price": 185.5,
+      "timestamp": "2024-01-15T09:30:15Z",
+      "execution_venue": "NASDAQ",
+      "order_type": "MARKET"
+    },
+    {
+      "trade_id": "TRD_002",
+      "account_id": "ACC_001",
+      "symbol": "AAPL",
+      "side": "SELL",
+      "quantity": 10000,
+      "price": 185.75,
+      "timestamp": "2024-01-15T09:32:45Z",
+      "execution_venue": "NASDAQ",
+      "order_type": "LIMIT"
+    },
+    {
+      "trade_id": "TRD_003",
+      "account_id": "ACC_002",
+      "symbol": "TSLA",
+      "side": "BUY",
+      "quantity": 5000,
+      "price": 248.2,
+      "timestamp": "2024-01-15T10:15:30Z",
+      "execution_venue": "NYSE",
+      "order_type": "MARKET"
+    }
+  ],
+  "analysis": {
+    "total_trades": 3,
+    "self_matches": 1,
+    "round_trips": [
+      {
+        "account_id": "ACC_001",
+        "symbol": "AAPL",
+        "duration_seconds": 150,
+        "pnl": 2500.0
+      }
+    ],
+    "suspicious_patterns": ["rapid_round_trip"]
+  }
+}

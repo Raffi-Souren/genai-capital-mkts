@@ -1,0 +1,77 @@
+{
+  "schemas": {
+    "research_note": {
+      "structure": "# Thesis\n\n## Key Performance Indicators\n\n## Risk Factors\n\n## Management Commentary\n\n## Citations\n\n## Disclaimer",
+      "max_length": 1500,
+      "citation_format": "[Source: {source}, p. {page}]"
+    },
+    "trader_brief": {
+      "max_words": 150,
+      "structure": "Executive summary with actionable insights"
+    },
+    "sar_memo": {
+      "required_sections": ["summary", "evidence", "metrics", "controls", "appendix"],
+      "evidence_min_items": 3,
+      "json_schema": {
+        "type": "object",
+        "properties": {
+          "summary": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "metrics": {
+            "type": "object"
+          },
+          "appendix": {
+            "type": "object"
+          }
+        },
+        "required": ["summary", "evidence", "metrics", "appendix"]
+      }
+    }
+  },
+  "sections": {
+    "research_note": {},
+    "trader_brief": {},
+    "sar_memo": {
+      "json_schema": {
+        "type": "object",
+        "properties": {
+          "summary": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "metrics": {
+            "type": "object"
+          },
+          "appendix": {
+            "type": "object"
+          }
+        },
+        "required": ["summary", "evidence", "metrics", "appendix"]
+      }
+    }
+  },
+  "disclaimers": {
+    "research": "This research note is for informational purposes only and does not constitute investment advice.",
+    "surveillance": "This surveillance report is generated for compliance monitoring purposes.",
+    "regulatory": "Regulatory impact analysis is preliminary and subject to final rule interpretation.",
+    "no_recommendation": "Informational only."
+  },
+  "writing_rules": {
+    "tone": "professional, concise, data-driven",
+    "citations": "Always include page references for quotes",
+    "management_quotes": "Maximum 25 words per quote with page reference",
+    "numbers": "Use consistent formatting for financial figures"
+  }
+}

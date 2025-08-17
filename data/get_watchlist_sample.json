@@ -1,0 +1,30 @@
+{
+  "watchlist": [
+    {
+      "account_id": "ACC_001",
+      "account_name": "Hedge Fund Alpha",
+      "risk_score": 8.5,
+      "last_activity": "2024-01-15T14:30:00Z",
+      "flags": ["high_frequency", "cross_asset"]
+    },
+    {
+      "account_id": "ACC_002",
+      "account_name": "Prop Trading Beta",
+      "risk_score": 7.2,
+      "last_activity": "2024-01-15T16:45:00Z",
+      "flags": ["large_positions", "after_hours"]
+    },
+    {
+      "account_id": "ACC_003",
+      "account_name": "Market Maker Gamma",
+      "risk_score": 6.8,
+      "last_activity": "2024-01-15T11:20:00Z",
+      "flags": ["market_making", "inventory_management"]
+    }
+  ],
+  "metadata": {
+    "total_accounts": 3,
+    "high_risk_threshold": 7.0,
+    "generated_at": "2024-01-15T17:00:00Z"
+  }
+}

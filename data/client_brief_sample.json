@@ -1,0 +1,28 @@
+{
+  "client": {
+    "name": "Institutional Investor Corp",
+    "type": "Asset Manager",
+    "aum": "15B",
+    "relationship_manager": "Sarah Johnson",
+    "last_meeting": "2024-01-10",
+    "primary_interests": ["ESG Investing", "Alternative Assets", "Risk Management"]
+  },
+  "recent_activity": {
+    "trades_ytd": 245,
+    "revenue_ytd": 1250000,
+    "top_products": ["Equity Derivatives", "Fixed Income", "Prime Services"]
+  },
+  "upcoming_opportunities": ["Q1 portfolio rebalancing", "ESG mandate expansion", "New fund launch preparation"],
+  "key_contacts": [
+    {
+      "name": "Michael Chen",
+      "role": "CIO",
+      "focus": "Investment Strategy"
+    },
+    {
+      "name": "Lisa Rodriguez",
+      "role": "Head of Risk",
+      "focus": "Risk Management"
+    }
+  ]
+}

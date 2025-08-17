@@ -1,0 +1,49 @@
+{
+  "analysis_period": "2023-01-01 to 2024-12-31",
+  "regimes": [
+    {
+      "name": "Risk-On",
+      "start_date": "2023-01-01",
+      "end_date": "2023-06-15",
+      "characteristics": {
+        "volatility": "low",
+        "correlation": 0.65,
+        "market_sentiment": "bullish"
+      }
+    },
+    {
+      "name": "Transition",
+      "start_date": "2023-06-16",
+      "end_date": "2023-09-30",
+      "characteristics": {
+        "volatility": "medium",
+        "correlation": 0.45,
+        "market_sentiment": "mixed"
+      }
+    },
+    {
+      "name": "Risk-Off",
+      "start_date": "2023-10-01",
+      "end_date": "2024-12-31",
+      "characteristics": {
+        "volatility": "high",
+        "correlation": 0.85,
+        "market_sentiment": "bearish"
+      }
+    }
+  ],
+  "change_points": [
+    {
+      "date": "2023-06-15",
+      "significance": 0.89,
+      "trigger": "Fed policy shift"
+    },
+    {
+      "date": "2023-09-30",
+      "significance": 0.76,
+      "trigger": "Geopolitical tensions"
+    }
+  ],
+  "current_regime": "Risk-Off",
+  "confidence": 0.82
+}
