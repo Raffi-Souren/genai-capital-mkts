@@ -167,7 +167,8 @@ If anything breaks during live presentation:
 3. Deploy automatically on push to main
 
 Alternatively use other vibe coding tools to aid in customizations and deployment:
-<img width="1339" height="748" alt="Screenshot 2025-08-17 at 3 12 24 PM" src="https://github.com/user-attachments/assets/205de6b9-7900-425d-9cba-a76ac2f59287" />
+<img width="1168" height="742" alt="Screenshot 2025-08-17 at 3 14 04 PM" src="https://github.com/user-attachments/assets/b9d41c1b-359e-4713-9d35-89864fb97a9f" />
+
 
 ## 📄 License
 
