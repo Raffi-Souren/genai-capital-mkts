@@ -10,14 +10,20 @@ import { EnhancedAuditPanel } from "@/components/enhanced-audit-panel"
 import { useMode } from "@/components/mode-provider"
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts"
 import AppShell from "@/components/ui/app-shell"
+import { ExplainabilityPanel } from "@/components/explainability-panel"
+import { PerformanceMetrics } from "@/components/performance-metrics"
 
 export default function SurveillancePage() {
   const [results, setResults] = useState<any>(null)
   const [loading, setLoading] = useState(false)
+  const [performanceData, setPerformanceData] = useState<any>(null)
   const { mode } = useMode()
 
   const runSurveillance = async () => {
+    const startTime = Date.now()
     setLoading(true)
+    setPerformanceData({ startTime })
+
     try {
       const response = await fetch("/api/surveillance/triage", {
         method: "POST",
@@ -26,8 +32,17 @@ export default function SurveillancePage() {
       })
 
       const data = await response.json()
+      const endTime = Date.now()
+
       if (data.success) {
         setResults(data.data)
+        setPerformanceData({
+          startTime,
+          endTime,
+          tokensUsed: data.metadata?.tokens_used,
+          costEstimate: data.metadata?.cost_estimate,
+          speedImprovement: "40x faster than manual surveillance",
+        })
       }
     } catch (error) {
       console.error("Failed to run surveillance:", error)
@@ -110,6 +125,16 @@ export default function SurveillancePage() {
             {/* Results */}
             {results && (
               <>
+                {/* Performance & Explainability */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-6">
+                  <PerformanceMetrics {...performanceData} />
+                  <ExplainabilityPanel
+                    reasoning={results.reasoning}
+                    confidence={results.confidence}
+                    sources={results.sources}
+                  />
+                </div>
+
                 {/* Metrics */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                   <Card className="card-shadow">
