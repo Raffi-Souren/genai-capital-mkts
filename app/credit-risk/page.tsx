@@ -6,17 +6,23 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Shield } from "lucide-react"
 import { EnhancedAuditPanel } from "@/components/enhanced-audit-panel"
+import { useMode } from "@/components/mode-provider"
 import AppShell from "@/components/ui/app-shell"
 
 export default function CreditRiskPage() {
   const [results, setResults] = useState<any>(null)
   const [loading, setLoading] = useState(false)
+  const { mode } = useMode()
 
   const runAnalysis = async () => {
     setLoading(true)
-    // Simulate API call
-    setTimeout(() => {
-      setResults({
+    const startTime = Date.now()
+
+    try {
+      // Simulate API call with realistic timing
+      await new Promise((resolve) => setTimeout(resolve, 1500 + Math.random() * 1000))
+
+      const analysisResults = {
         creditScore: 742,
         riskLevel: "Medium",
         fraudProbability: 0.12,
@@ -25,9 +31,29 @@ export default function CreditRiskPage() {
           "Request additional income documentation",
           "Monitor for unusual transaction patterns",
         ],
-      })
+      }
+
+      const latencyMs = Date.now() - startTime
+
+      window.dispatchEvent(
+        new CustomEvent("metricsUpdate", {
+          detail: {
+            mode: mode.toUpperCase(),
+            model: "Risk-ML-v2",
+            latencyMs,
+            costUsd: 0.0008,
+          },
+        }),
+      )
+
+      setResults(analysisResults)
+
+      console.log("[v0] Credit risk analysis completed, dispatching audit event")
+    } catch (error) {
+      console.error("Credit risk analysis failed:", error)
+    } finally {
       setLoading(false)
-    }, 2000)
+    }
   }
 
   return (

@@ -6,6 +6,8 @@ import { useRouter, usePathname } from "next/navigation"
 import { Home, ArrowLeft, Sun, Heart, Github } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { Switch } from "@/components/ui/switch"
+import { Label } from "@/components/ui/label"
 import { useMode } from "@/components/mode-provider"
 import { useState, useEffect } from "react"
 
@@ -20,7 +22,7 @@ export { AppShell }
 export default function AppShell({ title, children, showFavorite = false, agentId }: AppShellProps) {
   const router = useRouter()
   const pathname = usePathname()
-  const { mode } = useMode()
+  const { mode, setMode } = useMode()
   const isHome = pathname === "/"
 
   const [isFavorite, setIsFavorite] = useState(false)
@@ -29,6 +31,7 @@ export default function AppShell({ title, children, showFavorite = false, agentI
     latencyMs?: number
     costUsd?: number
   } | null>(null)
+  const [showModeToggle, setShowModeToggle] = useState(false)
 
   useEffect(() => {
     if (agentId) {
@@ -62,6 +65,10 @@ export default function AppShell({ title, children, showFavorite = false, agentI
     }
   }
 
+  const handleModeToggle = (checked: boolean) => {
+    setMode(checked ? "live" : "mock")
+  }
+
   return (
     <div className="min-h-screen flex flex-col">
       {/* top bar */}
@@ -86,7 +93,11 @@ export default function AppShell({ title, children, showFavorite = false, agentI
           </div>
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-2">
-              <Badge variant="outline" className="font-mono text-xs bg-blue-50 text-blue-700 border-blue-200">
+              <Badge
+                variant="outline"
+                className="font-mono text-xs bg-blue-50 text-blue-700 border-blue-200 cursor-pointer hover:bg-blue-100 transition-colors"
+                onClick={() => setShowModeToggle(!showModeToggle)}
+              >
                 {mode.toUpperCase()}
               </Badge>
               {metrics?.model && (
@@ -105,6 +116,18 @@ export default function AppShell({ title, children, showFavorite = false, agentI
                 </Badge>
               )}
             </div>
+
+            {showModeToggle && (
+              <div className="absolute top-full right-0 mt-2 p-3 bg-white border border-slate-200 rounded-lg shadow-lg z-50">
+                <div className="flex items-center space-x-2">
+                  <Label htmlFor="mode-toggle" className="text-sm font-medium">
+                    Live Mode
+                  </Label>
+                  <Switch id="mode-toggle" checked={mode === "live"} onCheckedChange={handleModeToggle} />
+                </div>
+                <p className="text-xs text-slate-500 mt-1">{mode === "live" ? "Using GPT-5 API" : "Using mock data"}</p>
+              </div>
+            )}
 
             {showFavorite && agentId && (
               <Button
@@ -129,6 +152,8 @@ export default function AppShell({ title, children, showFavorite = false, agentI
             <ThemeToggle />
           </div>
         </div>
+
+        {showModeToggle && <div className="fixed inset-0 z-40" onClick={() => setShowModeToggle(false)} />}
       </header>
 
       {/* page content */}
