@@ -3,7 +3,7 @@ import Link from "next/link"
 import type React from "react"
 
 import { useRouter, usePathname } from "next/navigation"
-import { Home, ArrowLeft, Sun, Heart } from "lucide-react"
+import { Home, ArrowLeft, Sun, Heart, Github } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { useMode } from "@/components/mode-provider"
@@ -48,7 +48,7 @@ export default function AppShell({ title, children, showFavorite = false, agentI
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
       {/* top bar */}
       <header className="sticky top-0 z-40 w-full border-b border-slate-200 bg-white/80 backdrop-blur">
         <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
@@ -100,7 +100,25 @@ export default function AppShell({ title, children, showFavorite = false, agentI
       </header>
 
       {/* page content */}
-      <main className="mx-auto max-w-6xl px-4 py-8">{children}</main>
+      <main className="mx-auto max-w-6xl px-4 py-8 flex-1">{children}</main>
+
+      {/* footer with GitHub link */}
+      <footer className="border-t border-slate-200 bg-slate-50/50">
+        <div className="mx-auto max-w-6xl px-4 py-6">
+          <div className="flex items-center justify-between">
+            <div className="text-sm text-slate-600">Capital Markets Agent Factory - AI-Powered Financial Analysis</div>
+            <Link
+              href="https://github.com/Raffi-Souren/genai-capital-mkts"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-slate-900 transition-colors"
+            >
+              <Github className="h-4 w-4" />
+              View on GitHub
+            </Link>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }

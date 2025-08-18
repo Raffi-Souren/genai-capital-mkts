@@ -1,10 +1,14 @@
 import AppShell from "@/components/ui/app-shell"
 import { AgentCard } from "@/components/AgentCard"
+import { GlobalHeaderChips } from "@/components/global-header-chips"
 
 export default function Dashboard() {
   return (
     <AppShell>
       <div className="space-y-8">
+        {/* Global Header Chips */}
+        <GlobalHeaderChips />
+
         {/* Hero Section */}
         <div className="text-center space-y-4">
           <h1 className="text-3xl font-semibold text-slate-900">Capital Markets Agent Factory</h1>
@@ -12,35 +16,6 @@ export default function Dashboard() {
             AI-powered agents for institutional trading and compliance workflows
           </p>
         </div>
-
-        <section aria-label="Capital Markets Overview" className="bg-slate-50 rounded-2xl p-6 space-y-4">
-          <h2 className="text-lg font-semibold text-slate-900">What are Capital Markets?</h2>
-          <p className="text-slate-700">
-            Capital markets facilitate the raising of financing through <strong>equity</strong> (ownership stakes) and{" "}
-            <strong>debt</strong> (loans/bonds). Companies access these markets to fund growth, while investors seek
-            returns through trading securities.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-            <div className="space-y-2">
-              <h3 className="font-medium text-slate-900">AI Applications:</h3>
-              <ul className="text-slate-600 space-y-1">
-                <li>• Automated research & analysis</li>
-                <li>• Risk monitoring & compliance</li>
-                <li>• Trading pattern detection</li>
-                <li>• Regulatory filing processing</li>
-              </ul>
-            </div>
-            <div className="space-y-2">
-              <h3 className="font-medium text-slate-900">Key Processes:</h3>
-              <ul className="text-slate-600 space-y-1">
-                <li>• IPO & S-1 filing analysis</li>
-                <li>• Credit & fraud risk assessment</li>
-                <li>• KYC & due diligence</li>
-                <li>• Market regime detection</li>
-              </ul>
-            </div>
-          </div>
-        </section>
 
         {/* Core Agents */}
         <section aria-label="Core Agents" className="space-y-4">
@@ -64,9 +39,25 @@ export default function Dashboard() {
               tags={["Regime Detection", "Correlation", "Risk Metrics"]}
               href="/regime"
             />
+            <AgentCard
+              title="Meetings Analysis"
+              body="Analyze earnings calls and meeting transcripts for key insights and sentiment."
+              tags={["Transcript Analysis", "Earnings Calls", "Sentiment Analysis", "Key Insights"]}
+              href="/meetings"
+            />
           </div>
         </section>
 
+        {/* Capital Markets Overview */}
+        <section aria-label="Capital Markets Overview" className="bg-slate-50 rounded-2xl p-6">
+          <h2 className="text-lg font-semibold text-slate-900">What are Capital Markets?</h2>
+          <p className="text-slate-700">
+            Capital markets facilitate raising financing through equity (ownership stakes) and debt (loans/bonds), with
+            AI now automating research, compliance, risk monitoring, and regulatory analysis.
+          </p>
+        </section>
+
+        {/* Valuation & Comps */}
         <section aria-label="Valuation & Comps" className="space-y-4">
           <h2 className="text-lg font-semibold text-slate-900">Valuation & Comps</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -91,6 +82,7 @@ export default function Dashboard() {
           </div>
         </section>
 
+        {/* Utility Tools */}
         <section aria-label="Utility Tools" className="space-y-4">
           <h2 className="text-lg font-semibold text-slate-900">Back Office & Risk Tools</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
