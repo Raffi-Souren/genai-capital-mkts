@@ -4,7 +4,7 @@
 
 ## 🎯 Live Demo Script
 
-For conference presentations, follow this sequence:
+For demos, follow this sequence:
 1. **Start in Mock mode** to ensure smooth flow
 2. **Toggle to Live** for one impressive GPT-5 example  
 3. **Always have backup JSON files** ready
@@ -165,6 +165,10 @@ If anything breaks during live presentation:
    - `OPENAI_API_KEY` (Production/Preview/Development)
    - `GPT_MODEL=gpt-5`
 3. Deploy automatically on push to main
+
+Alternatively, use vibe coding tool of choice or make fixes locally:
+<img width="1168" height="742" alt="Screenshot 2025-08-17 at 3 14 04 PM" src="https://github.com/user-attachments/assets/a0529659-87b4-4253-adcf-48dffc883d29" />
+
 
 ## 📄 License
 
