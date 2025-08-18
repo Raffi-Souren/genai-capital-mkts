@@ -26,24 +26,28 @@ export default function Dashboard() {
               body="Generate institutional-grade research notes from 8-K/10-Q filings."
               tags={["PDF Analysis", "KPI Extraction", "Mgmt Quotes", "Citations"]}
               href="/research"
+              status="ready"
             />
             <AgentCard
               title="Surveillance"
               body="Monitor trading patterns and generate SAR-compliant memos."
               tags={["Pattern Detection", "Compliance Metrics", "SAR Generation"]}
               href="/surveillance"
+              status="ready"
             />
             <AgentCard
               title="Regime & Hedge"
               body="Detect regime changes and generate hedge recommendations by desk."
               tags={["Regime Detection", "Correlation", "Risk Metrics"]}
               href="/regime"
+              status="ready"
             />
             <AgentCard
               title="Meetings Analysis"
               body="Analyze earnings calls and meeting transcripts for key insights and sentiment."
               tags={["Transcript Analysis", "Earnings Calls", "Sentiment Analysis", "Key Insights"]}
               href="/meetings"
+              status="ready"
             />
           </div>
         </section>
@@ -66,18 +70,21 @@ export default function Dashboard() {
               body="Analyze comparable debt instruments and pricing across markets."
               tags={["Credit Analysis", "Yield Curves", "Spread Analysis"]}
               href="/debt-comps"
+              status="coming-soon"
             />
             <AgentCard
               title="Equity Comps"
               body="Generate equity comparables and valuation multiples analysis."
               tags={["P/E Ratios", "EV/EBITDA", "Sector Analysis"]}
               href="/equity-comps"
+              status="coming-soon"
             />
             <AgentCard
               title="IPO Analysis"
               body="Streamline S-1 filing analysis with accuracy and compliance metrics."
               tags={["S-1 Processing", "Valuation Metrics", "Compliance Check"]}
               href="/ipo-analysis"
+              status="coming-soon"
             />
           </div>
         </section>
@@ -91,36 +98,42 @@ export default function Dashboard() {
               body="Automated research on individuals and businesses with socio-economic and geopolitical risk factors."
               tags={["Identity Verification", "Risk Assessment", "Geopolitical Analysis"]}
               href="/kyc"
+              status="coming-soon"
             />
             <AgentCard
               title="Credit & Fraud Risk"
               body="Automated credit scoring and fraud detection with evaluation metrics."
               tags={["Credit Scoring", "Fraud Detection", "Risk Evaluation"]}
               href="/credit-risk"
+              status="ready"
             />
             <AgentCard
               title="Filing Compliance"
               body="Process 10-K, 10-Q, and other regulatory filings with accuracy metrics."
               tags={["10-K Analysis", "10-Q Processing", "Compliance Metrics"]}
               href="/filing-compliance"
+              status="coming-soon"
             />
             <AgentCard
               title="Reg Impact"
               body="Analyze regulatory changes and map impact across trading desks."
               tags={["Regulatory Analysis", "Desk Mapping", "Impact Assessment"]}
               href="/reg-impact"
+              status="ready"
             />
             <AgentCard
               title="Client Brief"
               body="Generate meeting briefs and talking points for client interactions."
               tags={["Meeting Prep", "Talking Points", "Cross-sell Ideas"]}
               href="/client"
+              status="ready"
             />
             <AgentCard
               title="Knowledge"
               body="Upload and manage documents for agent knowledge base."
               tags={["Document Upload", "Knowledge Base", "File Management"]}
               href="/knowledge"
+              status="ready"
             />
           </div>
         </section>

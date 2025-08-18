@@ -16,6 +16,7 @@ interface AppShellProps {
   agentId?: string
 }
 
+export { AppShell }
 export default function AppShell({ title, children, showFavorite = false, agentId }: AppShellProps) {
   const router = useRouter()
   const pathname = usePathname()
@@ -23,6 +24,11 @@ export default function AppShell({ title, children, showFavorite = false, agentI
   const isHome = pathname === "/"
 
   const [isFavorite, setIsFavorite] = useState(false)
+  const [metrics, setMetrics] = useState<{
+    model?: string
+    latencyMs?: number
+    costUsd?: number
+  } | null>(null)
 
   useEffect(() => {
     if (agentId) {
@@ -30,6 +36,15 @@ export default function AppShell({ title, children, showFavorite = false, agentI
       setIsFavorite(favorites.includes(agentId))
     }
   }, [agentId])
+
+  useEffect(() => {
+    const handleMetricsUpdate = (event: CustomEvent) => {
+      setMetrics(event.detail)
+    }
+
+    window.addEventListener("metricsUpdate", handleMetricsUpdate as EventListener)
+    return () => window.removeEventListener("metricsUpdate", handleMetricsUpdate as EventListener)
+  }, [])
 
   const toggleFavorite = () => {
     if (!agentId) return
@@ -70,9 +85,26 @@ export default function AppShell({ title, children, showFavorite = false, agentI
             )}
           </div>
           <div className="flex items-center gap-2">
-            <Badge variant="outline" className="font-mono text-xs">
-              {mode.toUpperCase()}
-            </Badge>
+            <div className="flex items-center gap-2">
+              <Badge variant="outline" className="font-mono text-xs bg-blue-50 text-blue-700 border-blue-200">
+                {mode.toUpperCase()}
+              </Badge>
+              {metrics?.model && (
+                <Badge variant="outline" className="font-mono text-xs bg-green-50 text-green-700 border-green-200">
+                  {metrics.model}
+                </Badge>
+              )}
+              {metrics?.latencyMs && (
+                <Badge variant="outline" className="font-mono text-xs bg-orange-50 text-orange-700 border-orange-200">
+                  {metrics.latencyMs}ms
+                </Badge>
+              )}
+              {metrics?.costUsd && (
+                <Badge variant="outline" className="font-mono text-xs bg-purple-50 text-purple-700 border-purple-200">
+                  ${metrics.costUsd.toFixed(4)}
+                </Badge>
+              )}
+            </div>
 
             {showFavorite && agentId && (
               <Button
