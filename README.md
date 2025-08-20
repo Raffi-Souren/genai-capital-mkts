@@ -2,31 +2,6 @@
 
 > **Production-ready AI agents for institutional trading, compliance, and research workflows**
 
-## 🎯 Live Demo Script
-
-For demos, follow this sequence:
-1. **Start in Mock mode** to ensure smooth flow
-2. **Toggle to Live** for one impressive GPT-5 example  
-3. **Always have backup JSON files** ready
-4. **Keep the Audit Log visible** as a sidebar throughout
-
-### Key Demo Talking Points
-- "This is not a toy: schema-validated outputs + audit logs = production posture"
-- "GPT-5 is the reasoning layer; the controls live in our app"
-- "We don't send secrets to the browser—everything runs server-side"
-- "We measure value in minutes saved and errors prevented, not tokens"
-
-## 📊 Performance Benchmarks
-
-| Workflow | Manual Time | AI Time | Speed Improvement | Cost per Analysis |
-|----------|-------------|---------|-------------------|-------------------|
-| Research Note | 2 hours | 15 seconds | **8x faster** | $0.73 |
-| Surveillance Triage | 30 minutes | 45 seconds | **40x faster** | $0.45 |
-| Regime Analysis | Manual impossible | 30 seconds | **∞x faster** | $0.28 |
-| Regulatory Mapping | 2 days | 5 minutes | **576x faster** | $1.12 |
-
-*Based on GPT-5 analysis with institutional-grade data sets*
-
 ## 🚀 Quick Start
 
 ### Mock Mode (No API Key Required)
@@ -169,6 +144,31 @@ If anything breaks during live presentation:
 Alternatively, use vibe coding tool of choice or make fixes locally:
 <img width="1168" height="742" alt="Screenshot 2025-08-17 at 3 14 04 PM" src="https://github.com/user-attachments/assets/a0529659-87b4-4253-adcf-48dffc883d29" />
 
+
+## 🎯 Live Demo Script
+
+For demos, follow this sequence:
+1. **Start in Mock mode** to ensure smooth flow
+2. **Toggle to Live** for one impressive GPT-5 example  
+3. **Always have backup JSON files** ready
+4. **Keep the Audit Log visible** as a sidebar throughout
+
+### Key Demo Talking Points
+- "This is not a toy: schema-validated outputs + audit logs = production posture"
+- "GPT-5 is the reasoning layer; the controls live in our app"
+- "We don't send secrets to the browser—everything runs server-side"
+- "We measure value in minutes saved and errors prevented, not tokens"
+
+## 📊 Performance Benchmarks
+
+| Workflow | Manual Time | AI Time | Speed Improvement | Cost per Analysis |
+|----------|-------------|---------|-------------------|-------------------|
+| Research Note | 2 hours | 15 seconds | **8x faster** | $0.73 |
+| Surveillance Triage | 30 minutes | 45 seconds | **40x faster** | $0.45 |
+| Regime Analysis | Manual impossible | 30 seconds | **∞x faster** | $0.28 |
+| Regulatory Mapping | 2 days | 5 minutes | **576x faster** | $1.12 |
+
+*Based on GPT-5 analysis with synthetic data sets*
 
 ## 📄 License
 
