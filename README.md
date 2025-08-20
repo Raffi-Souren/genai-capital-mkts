@@ -1,6 +1,6 @@
 # Capital Markets Agent Factory (GPT-5 Demo)
 
-> **Production-ready AI agents for institutional trading, compliance, and research workflows**
+> **Experimental AI agents for institutional trading, compliance, and research workflows**
 
 ## 🚀 Quick Start
 
